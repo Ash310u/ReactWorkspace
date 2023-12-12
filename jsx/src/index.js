@@ -14,8 +14,8 @@ function App() {
     if(Math.random() > .5) {
         msg = 'Hey there!'
     }
-
-    return <h1>{msg}, Time: {new Date().toLocaleTimeString()}</h1>
+    const user = {name: 'ash'}
+    return <h1>{msg}, Time: {new Date().toLocaleTimeString()}, {user.name}</h1>
 }
 // 5) Show the component on the screen
 root.render(<App />);
