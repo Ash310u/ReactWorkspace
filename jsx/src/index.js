@@ -15,7 +15,7 @@ function App() {
         msg = 'Hey there!'
     }
 
-    return <h1>{msg}</h1>
+    return <h1>{msg}, Time: {new Date().toLocaleTimeString()}</h1>
 }
 // 5) Show the component on the screen
 root.render(<App />);
