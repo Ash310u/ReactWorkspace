@@ -10,7 +10,9 @@ const root = ReactDOM.createRoot(el);
 
 // 4) Create a component
 function App() {
-    return <input type="number" />
+    const inputType = "number"
+    const minValue = 5
+    return <input type={inputType} min={minValue} />
 }
 // 5) Show the component on the screen
 root.render(<App />);
