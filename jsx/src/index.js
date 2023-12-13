@@ -10,7 +10,17 @@ const root = ReactDOM.createRoot(el);
 
 // 4) Create a component
 function App() {
-    return <input type="number" min={5} />
+    const msg = 'hey there!'
+    return (
+        <input
+            type="number"
+            min={5}
+            max={10}
+            list={[1, 2, 3]}
+            style={{ color: 'red' }}
+            alt={msg}
+        />
+    )
 }
 // 5) Show the component on the screen
 root.render(<App />);
