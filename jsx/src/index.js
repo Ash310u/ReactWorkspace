@@ -10,12 +10,7 @@ const root = ReactDOM.createRoot(el);
 
 // 4) Create a component
 function App() {
-    let msg = 'Bye there!'
-    if(Math.random() > .5) {
-        msg = 'Hey there!'
-    }
-    const user = {name: 'ash'}
-    return <h1>{msg}, Time: {new Date().toLocaleTimeString()}, {user.name}</h1>
+    return <input type="number" />
 }
 // 5) Show the component on the screen
 root.render(<App />);
