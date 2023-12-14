@@ -10,10 +10,10 @@ const root = ReactDOM.createRoot(el);
 
 // 4) Create a component
 function App() {
-    const msg = 'hey there!'
     return (
         <textarea
             autoFocus
+            spellCheck 
         />
     )
 }
