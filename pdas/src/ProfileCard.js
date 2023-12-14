@@ -1,5 +1,5 @@
-const ProfileCard = (data) => {
-    return <div> Name: {data.name}</div>
+const ProfileCard = ({name}) => {
+    return <div> Name: {name}</div>
 }
 
 export default ProfileCard
