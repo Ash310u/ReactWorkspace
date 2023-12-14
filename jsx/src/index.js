@@ -12,13 +12,8 @@ const root = ReactDOM.createRoot(el);
 function App() {
     const msg = 'hey there!'
     return (
-        <input
-            type="number"
-            min={5}
-            max={10}
-            list={[1, 2, 3]}
-            style={{ color: 'red' }}
-            alt={msg}
+        <textarea
+            autoFocus
         />
     )
 }
