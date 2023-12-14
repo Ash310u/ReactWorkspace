@@ -4,9 +4,9 @@ const App = () => {
     return (
         <div>
             <div>Personal Digital Assistants</div>
-            <ProfileCard a='huh'/>
-            <ProfileCard a='meh'/>
-            <ProfileCard a='ohh'/>
+            <ProfileCard name='Alexa'/>
+            <ProfileCard name='Cortana'/>
+            <ProfileCard name='Siri'/>
         </div>
     )
 }
