@@ -3,7 +3,7 @@ const ProfileCard = ({title, handle, img}) => {
     return (
         <div>
             <div>
-                <img src={img}/>
+                <img src ={img} alt='pda logo'/>
             </div>
             <div>Title is {title}</div>
             <div>Handle is {handle}</div>
