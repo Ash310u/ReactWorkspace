@@ -13,7 +13,7 @@ function App() {
     return (
         <textarea
             autoFocus
-            spellCheck 
+            spellCheck
             style={{
                 fontFamily:'monospace',
                 color:'green',
