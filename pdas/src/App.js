@@ -16,7 +16,12 @@ const App = () => {
         <section className="section">
           <div className="columns">
             <div className="column is-4">
-              <ProfileCard title="Alexa" handle="@alexa99" img={AlexaImg} />
+              <ProfileCard 
+                title="Alexa" 
+                handle="@alexa99" 
+                img={AlexaImg}
+                description='Alexa was created by amazon and helps you buy things.'
+              />
             </div>
 
             <div className="column is-4">
@@ -24,11 +29,17 @@ const App = () => {
                 title="Cortana"
                 handle="@cortana32"
                 img={CortanaImg}
+                description='Cortana was made by Microsoft. Who knows what it does?'
               />
             </div>
 
             <div className="column is-4">
-              <ProfileCard title="Siri" handle="@siri01" img={SiriImg} />
+              <ProfileCard
+                title="Siri"
+                handle="@siri01"
+                img={SiriImg}
+                description='Siri was made by Apple and is being phased out.'
+              />
             </div>
           </div>
         </section>

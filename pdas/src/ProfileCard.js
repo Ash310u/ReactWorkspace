@@ -1,5 +1,5 @@
-const ProfileCard = ({title, handle, img}) => {
-    console.log(title, handle)
+const ProfileCard = ({title, handle, img, description}) => {
+    console.log(title, handle, description)
     return (
         <div className="card">
             <div className="card-image">
@@ -13,6 +13,7 @@ const ProfileCard = ({title, handle, img}) => {
                     <p className="title is-4">{title}</p>
                     <p className="subtitle is-6">{handle}</p>
                 </div>
+                <div className="content">{description}</div>
             </div>
         </div>
     )
