@@ -2,7 +2,7 @@ import { useState } from "react"
 import AnimalShow from "./AnimalShow"
 
 const getRandomAnimal = () => {
-    const animal = ['bird','cow','aligator','cat','dog','horse']
+    const animal = ['bird','cow','gator','cat','dog','horse']
 
     return animal[Math.floor(Math.random() * animal.length)]
 }
