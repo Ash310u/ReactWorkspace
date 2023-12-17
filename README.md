@@ -1,6 +1,6 @@
 # React State methods uses Array destructuring
 
-# A example of Array distructuring
+## A example of Array distructuring
 
 ```js
 const ArrayDes = () => {
