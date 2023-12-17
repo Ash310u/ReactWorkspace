@@ -1,12 +1,12 @@
 const App = () => {
-    const handleClick = () => {
+    const handleMouseMove = () => {
         console.log('it works')
     }
 
     return (
         <div>
             Show animal list here!
-            <button onClick={handleClick}>
+            <button onMouseMove={handleMouseMove}>
                 Click
             </button>
         </div>
