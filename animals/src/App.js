@@ -1,13 +1,13 @@
 const App = () => {
-    const btnClick = () => {
-        console.log('hey rick')
+    const handleClick = () => {
+        console.log('it works')
     }
 
     return (
         <div>
             Show animal list here!
-            <button onClick={btnClick}>
-                check
+            <button onClick={handleClick}>
+                Click
             </button>
         </div>
     )
