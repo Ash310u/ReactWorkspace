@@ -10,13 +10,12 @@ const App = () => {
     const [animals, setAnimals] =  useState([])
 
     const handleClick = () => {
-        setAnimals([...animals, ...getRandomAnimal()])
+        setAnimals([...animals, getRandomAnimal()])
     }
 
     return (
         <div>
             <button onClick={handleClick}>Click</button>
-            <div>{animals}</div>
         </div>
     )
 }
