@@ -16,7 +16,9 @@ const svgMap = {
 }
 
 const AnimalShow = ({type}) => {
-    return <div>{type}</div>
+    return <div>
+        <img alt='animal' src={svgMap[type]}/>
+    </div>
 }
 
 export default AnimalShow
