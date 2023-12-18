@@ -24,10 +24,11 @@ const AnimalShow = ({type}) => {
     }
 
     return (
-    <div onClick={handleClick}>
-        <img alt='animal' src={svgMap[type]}/>
+    <div className='animal-show' onClick={handleClick}>
+        <img className='animal' alt='animal' src={svgMap[type]}/>
         <img 
             alt='heart' 
+            className='heart'
             src={heart}
             style={{ width: 10 + 10 * clicks + 'px' }}
         />
