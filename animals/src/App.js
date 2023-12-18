@@ -21,7 +21,7 @@ const App = () => {
 
     return (
         <div className='app'>
-            <button onClick={handleClick}>Click</button>
+            <button onClick={handleClick}>Add Animal</button>
             <div className='animal-list'>{renderedAnimals}</div>
         </div>
     )
