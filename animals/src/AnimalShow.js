@@ -30,7 +30,7 @@ const AnimalShow = ({type}) => {
             alt='heart' 
             className='heart'
             src={heart}
-            style={{ width: 10 + 10 * clicks + 'px' }}
+            style={{ width: 10 + 5 * clicks + 'px' }}
         />
     </div>
     )
