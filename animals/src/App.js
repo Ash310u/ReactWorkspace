@@ -17,7 +17,7 @@ const App = () => {
     
     const renderedAnimals = animals.map((animal, index  ) => {
         return <AnimalShow type={animal} key={index}/>
-    })  
+    })  // it return A new Array of components with those values of animals Array
 
     return (
         <div className='app'>
