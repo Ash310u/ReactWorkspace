@@ -1,15 +1,20 @@
 import { useState } from "react";
 
-const SearchBar = ({ onSubmit }) => {
-    const [intialValue, setIntialValue] = useState('')
+const SearchBar = ({ Submit }) => {
+    const [ initialValue, setInitialValue ] = useState('')
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault()
+        Submit(initialValue)
+    }
     return (
         <div>
-            <input 
-                type="text"
-                value={intialValue}
-                onChange={e => setIntialValue(e.target.value)}
-            />
-            <button onClick={onSubmit(intialValue)}>Search</button>
+            <form onSubmit={handleFormSubmit} >
+                <input 
+                    type="text" 
+                    onChange={e => setInitialValue(e.target.value)}
+                />
+            </form>
         </div>
     )
 }

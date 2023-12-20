@@ -1,5 +1,5 @@
-import ImageList from "./components/ImageList"
-import SearchBar from "./components/SearchBar"
+import ImageList from "./components/ImageList";
+import SearchBar from "./components/SearchBar";
 import searchImages from './api';
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
     }
     return (
         <div>
-            <SearchBar onSubmit={handleSubmit} />
+            <SearchBar Submit={handleSubmit} />
         </div>
     )
 }
