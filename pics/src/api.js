@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+// Using axios to fetch data from unsplash api
 const searchImages = async (term) => {
     const response = await axios.get('https://api.unsplash.com/search/photos', {
         headers: {
