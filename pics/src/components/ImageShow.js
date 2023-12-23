@@ -1,7 +1,7 @@
 const ImageShow = ({ src, alt }) => {
     return (
         <div>
-            <img src={src} alt={alt} style={{ width: '200px' }} />
+            <img src={src} alt={alt} />
         </div>
     )
 }
