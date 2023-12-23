@@ -1,8 +1,8 @@
-const ImageShow = ({src}) => {
+const ImageShow = ({ src }) => {
     return (
-       <div>
-            <img src={src} alt='img' style={{width: '200px'}}/>
-       </div>
+        <div>
+            <img src={src} alt='img' style={{ width: '200px' }} />
+        </div>
     )
 }
 
