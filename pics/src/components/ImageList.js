@@ -1,3 +1,4 @@
+import "./ImageList.css"
 import ImageShow from "./ImageShow"
 
 const ImageList = ({ data }) => {
@@ -6,7 +7,7 @@ const ImageList = ({ data }) => {
     })
 
     return (
-        <div>
+        <div className="image-list">
             {renderedLinks}
         </div>
     )

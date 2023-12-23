@@ -1,3 +1,4 @@
+import "./SearchBar.css";
 import { useState } from "react";
 
 const SearchBar = ({ Submit }) => {
@@ -8,8 +9,9 @@ const SearchBar = ({ Submit }) => {
         Submit(initialValue)
     }
     return (
-        <div>
+        <div className="search-bar">
             <form onSubmit={handleFormSubmit} >
+                <label>Enter Search Term</label>
                 <input 
                     type="text" 
                     // Reason behind using value: We are truly doing here is stealing control of the value of the input from the browser 
