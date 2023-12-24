@@ -5,6 +5,7 @@ function BookCreate({ onCreate }) {
     const handleSumbit = (e) => {
         e.preventDefault()
         onCreate(title)
+        setTitle('')
     }
     return (
         <div>
