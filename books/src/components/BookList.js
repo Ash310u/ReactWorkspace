@@ -1,8 +1,8 @@
 import BookShow from "./BookShow"
 
-function BookList({ books }) {
+function BookList({ books, deleteBookById }) {
     const listing = books.map(book => {
-        return <BookShow book={book} key={book.id} />
+        return <BookShow book={book} key={book.id} deleteBookById={deleteBookById} />
     })
 
     return (
