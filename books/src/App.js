@@ -16,7 +16,7 @@ function App() {
     }
     return (
         <div>
-            <BookList titles={books} />
+            <BookList books={books} />
             <BookCreate onCreate={createBook} />
         </div>
     )
