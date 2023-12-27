@@ -4,10 +4,10 @@ import BookCreate from "./components/BookCreate"
 function App() {
     const [ books, setBooks ] = useState([])
     const createBook = (title) => {
-        const updatedArray = [
-            ...books,
-            {id, title}
-        ]
+        // const updatedArray = [
+        //     ...books,
+        //     {id, title}
+        // ]
         console.log('Need to add book with: ' + title)
     }
     return (
