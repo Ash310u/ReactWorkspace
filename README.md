@@ -12,6 +12,11 @@ console.log(firstElement, secondElement);
 // Output: 1,2
 ```
 
-## A CheatSheet for State Update
+## State Concepts
 
-[CheatSheet Link](https://state-updates.vercel.app/)
+<img src="./conceptsPNGS/stateUpdates.png" alt="State Updates">
+<img src="./conceptsPNGS/addingElementsToAnArray.png" alt="Adding Elements To An Array">
+<img src="./conceptsPNGS/removingElementsFromAnArray.png" alt="Removing Elements From An Array">
+<img src="./conceptsPNGS/changingElements.png" alt="Changing Elements">
+<img src="./conceptsPNGS/changingPropertiesInObjects.png" alt="Changing Properties In Objects">
+<img src="./conceptsPNGS/removingPropertiesInObjects.png" alt="Removing Properties In Objects">
