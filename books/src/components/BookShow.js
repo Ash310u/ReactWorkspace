@@ -1,9 +1,6 @@
 function BookShow({ book }) {
     return (
-        <div>
-            <img src='' alt=''/>
-            <h3>{book.title}</h3>
-        </div>
+        <div className="book-show">{book.title}</div>
     )
 }
 
