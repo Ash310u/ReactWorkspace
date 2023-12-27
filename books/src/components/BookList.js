@@ -1,6 +1,12 @@
-function BookList() {
+import BookShow from "./BookShow"
+
+function BookList({ titles }) {
+    const listing = titles.map(({ title, id }) => {
+        return <BookShow book={title} key={id} />
+    })
+
     return (
-        <div>BookList</div>
+        <div>{listing}</div>
     )
 }
 
