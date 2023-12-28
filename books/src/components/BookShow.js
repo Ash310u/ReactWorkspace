@@ -1,6 +1,6 @@
-function BookShow({ book, deleteBookById }) {
+function BookShow({ book, onDelete }) {
     const handleClick = () => {
-        deleteBookById(book.id)
+        onDelete(book.id)
     }
     return (
         <div className="book-show">
