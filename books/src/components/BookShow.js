@@ -4,10 +4,12 @@ function BookShow({ book, onDelete }) {
     }
     return (
         <div className="book-show">
-            <button onClick={handleClick}>
-                clear
-            </button>
-            <div>{book.title}</div>
+            {book.title}
+            <div className="actions">
+                <button className="delete" onClick={handleClick}>
+                    Delete
+                </button>
+            </div>
         </div>
     )
 }
