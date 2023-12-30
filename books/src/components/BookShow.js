@@ -1,4 +1,7 @@
-function BookShow({ book, onDelete }) {
+function BookShow({ book, onDelete, onEdit}) {
+    const handleChange = () => {
+        onEdit()
+    }
     const handleClick = () => {
         onDelete(book.id)
     }
@@ -6,6 +9,9 @@ function BookShow({ book, onDelete }) {
         <div className="book-show">
             {book.title}
             <div className="actions">
+                <button className="Edit" >
+                    Edit
+                </button>
                 <button className="delete" onClick={handleClick}>
                     Delete
                 </button>
