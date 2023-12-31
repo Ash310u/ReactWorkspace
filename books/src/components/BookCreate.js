@@ -19,7 +19,7 @@ function BookCreate({ onCreate }) {
                     placeholder="Add a Book"
                     onChange={e => setTitle(e.target.value)}
                 />
-                <button className="button" >Submit</button>
+                <button className="button" >Add</button>
             </form>
         </div>
     )
