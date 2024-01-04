@@ -30,7 +30,8 @@ function App() {
         setBooks(updatedBooks);
     }
     return (
-        <div>
+        <div className="app">
+            <h1>Reading List</h1>
             <BookList books={books} onDelete={deleteBookById} onEdit={editBookById} />
             <BookCreate onCreate={createBook} />
         </div>
