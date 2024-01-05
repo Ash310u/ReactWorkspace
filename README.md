@@ -20,3 +20,4 @@ console.log(firstElement, secondElement);
 <img src="./conceptsPNGS/changingElements.png" alt="Changing Elements">
 <img src="./conceptsPNGS/changingPropertiesInObjects.png" alt="Changing Properties In Objects">
 <img src="./conceptsPNGS/removingPropertiesInObjects.png" alt="Removing Properties In Objects">
+<img src="./conceptsPNGS/hooks.png" alt="Hooks">
