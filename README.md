@@ -20,5 +20,4 @@ console.log(firstElement, secondElement);
 <img src="./conceptsPNGS/changingElements.png" alt="Changing Elements">
 <img src="./conceptsPNGS/changingPropertiesInObjects.png" alt="Changing Properties In Objects">
 <img src="./conceptsPNGS/removingPropertiesInObjects.png" alt="Removing Properties In Objects">
-<img src="./conceptsPNGS/hooks.png" alt="Hooks" width="500">
-<img src="./conceptsPNGS/useEffectCleanupFunc.png" alt="useEffect Cleanup function" width="500">
+<div><img src="./conceptsPNGS/hooks.png" alt="Hooks" width="500"> <img src="./conceptsPNGS/useEffectCleanupFunc.png" alt="useEffect Cleanup function" width="500"><div/>
