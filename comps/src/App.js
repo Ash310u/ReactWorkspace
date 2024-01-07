@@ -16,7 +16,7 @@ const App = () => {
                 <Button>Hide Ads!</Button>
             </div>
             <div>
-                <Button>Orders!</Button>
+                <Button>Feekback!</Button>
             </div>
         </div>
     );
