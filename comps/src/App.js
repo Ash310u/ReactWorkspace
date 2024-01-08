@@ -4,7 +4,7 @@ const App = () => {
     return (
         <div>
             <div>
-                <Button>Click Me!</Button>
+                <Button success primary >Click Me!</Button>
             </div>
             <div>
                 <Button>Buy Now!</Button>
@@ -16,7 +16,7 @@ const App = () => {
                 <Button>Hide Ads!</Button>
             </div>
             <div>
-                <Button>Feekback!</Button>
+                <Button>Feedback!</Button>
             </div>
         </div>
     );
