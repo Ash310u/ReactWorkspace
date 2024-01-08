@@ -4,7 +4,7 @@ const App = () => {
     return (
         <div>
             <div>
-                <Button success primary >Click Me!</Button>
+                <Button primary >Click Me!</Button>
             </div>
             <div>
                 <Button>Buy Now!</Button>
