@@ -1,22 +1,38 @@
 import Button from "./button";
+import { GoFlame, GoDatabase, GoHome, GoCpu, GoCloud } from "react-icons/go";
 
 const App = () => {
     return (
         <div>
             <div>
-                <Button primary rounded>Click Me!</Button>
+                <Button primary rounded>
+                    <GoCloud />
+                    Cloud!
+                </Button>
             </div>
             <div>
-                <Button secondary outline >See Deal!</Button>
+                <Button secondary outline >
+                    <GoDatabase />
+                    Database!
+                </Button>
             </div>
             <div>
-                <Button success rounded outline>Buy Now!</Button>
+                <Button success rounded outline>
+                    <GoHome />
+                    Home!
+                </Button>
             </div>
             <div>
-                <Button warning>Hide Ads!</Button>
+                <Button warning>
+                    <GoCpu />
+                    CPU!
+                </Button>
             </div>
             <div>
-                <Button danger rounded>Feedback!</Button>
+                <Button danger rounded>
+                    <GoFlame />
+                    Jwala!
+                </Button>
             </div>
         </div>
     );
