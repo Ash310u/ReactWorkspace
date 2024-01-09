@@ -2,10 +2,13 @@ import Button from "./button";
 import { GoFlame, GoDatabase, GoHome, GoCpu, GoCloud } from "react-icons/go";
 
 const App = () => {
+    const handleClick = () => {
+            console.log('clicked');
+    }
     return (
         <div>
             <div>
-                <Button primary rounded>
+                <Button primary rounded onClick={handleClick}>
                     <GoCloud />
                     Cloud!
                 </Button>
