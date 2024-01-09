@@ -5,6 +5,15 @@ const App = () => {
     const handleClick = () => {
             console.log('clicked');
     }
+    const handleMouseEnter = () => {
+            console.log('Mouse Entered');
+    }
+    const handleMouseLeave = () => {
+            console.log('Mouse Leaved');
+    }
+    const handleMouseOver = () => {
+            console.log('Mouse Overed');
+    }
     return (
         <div>
             <div>
@@ -14,19 +23,19 @@ const App = () => {
                 </Button>
             </div>
             <div>
-                <Button secondary outline >
+                <Button secondary outline onMouseEnter={handleMouseEnter}>
                     <GoDatabase />
                     Database!
                 </Button>
             </div>
             <div>
-                <Button success rounded outline>
+                <Button success rounded outline onMouseLeave={handleMouseLeave}>
                     <GoHome />
                     Home!
                 </Button>
             </div>
             <div>
-                <Button warning>
+                <Button warning onMouseOver={handleMouseOver}>
                     <GoCpu />
                     CPU!
                 </Button>
