@@ -1,4 +1,4 @@
-import Button from "./button";
+import Button from "./components/Button";
 import { GoFlame, GoDatabase, GoHome, GoCpu, GoCloud } from "react-icons/go";
 
 const App = () => {
