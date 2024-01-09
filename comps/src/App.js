@@ -17,7 +17,7 @@ const App = () => {
     return (
         <div>
             <div>
-                <Button primary rounded onClick={handleClick}>
+                <Button primary rounded onClick={handleClick} className='mb-5'>
                     <GoCloud />
                     Cloud!
                 </Button>
