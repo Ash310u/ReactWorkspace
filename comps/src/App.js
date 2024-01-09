@@ -7,16 +7,16 @@ const App = () => {
                 <Button primary >Click Me!</Button>
             </div>
             <div>
-                <Button>Buy Now!</Button>
+                <Button secondary>See Deal!</Button>
             </div>
             <div>
-                <Button>See Deal!</Button>
+                <Button success>Buy Now!</Button>
             </div>
             <div>
-                <Button>Hide Ads!</Button>
+                <Button warning>Hide Ads!</Button>
             </div>
             <div>
-                <Button>Feedback!</Button>
+                <Button danger>Feedback!</Button>
             </div>
         </div>
     );
