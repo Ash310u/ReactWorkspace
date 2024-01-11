@@ -12,7 +12,7 @@ const App = () => {
         { label: 'Green', value: 'green' },
         { label: 'Yellow', value: 'yellow' }
     ]
-    return <Dropdown options={options} onSelect={handleSelect} item={selectedItem} />
+    return <Dropdown options={options} onChange={handleSelect} value={selectedItem} />
 };
 
 export default App;

@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const Dropdown = ({ options, onSelect, item }) => {
+const Dropdown = ({ options, onChange, value }) => {
     const [dropOn, setDropOn] = useState(false)
 
     const handleClick = () => {
@@ -10,7 +10,7 @@ const Dropdown = ({ options, onSelect, item }) => {
 
     const renderedOptions = options.map((option) => {
         return <div key={option.value} onClick={() => {
-            onSelect(option)
+            onChange(option)
             setDropOn(false)
         }}>{option.label}</div>
     })
@@ -20,7 +20,7 @@ const Dropdown = ({ options, onSelect, item }) => {
             Dropdown
             <div onClick={handleClick}>
                 {/* Existence check helper */}
-                {item?.label || 'Select'}
+                {value?.label || 'Select'}
             </div>
             {dropOn && <div>{renderedOptions}</div>}
         </div>
