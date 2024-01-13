@@ -12,7 +12,12 @@ const App = () => {
         { label: 'Green', value: 'green' },
         { label: 'Yellow', value: 'yellow' }
     ]
-    return <Dropdown options={options} onChange={handleSelect} value={selectedItem} />
+    return (
+        <div className="flex">
+             <Dropdown options={options} onChange={handleSelect} value={selectedItem} />
+             <Dropdown options={options} onChange={handleSelect} value={selectedItem} />
+        </div>
+    )
 };
 
 export default App;

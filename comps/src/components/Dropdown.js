@@ -1,9 +1,28 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { GoChevronDown, GoChevronUp } from "react-icons/go"
 import Panel from "./Panel"
 
 const Dropdown = ({ options, onChange, value }) => {
     const [dropOn, setDropOn] = useState(false)
+
+    const dropHead = useRef()
+
+    useEffect(() => {
+        const handler = (e) => {
+            if (!dropHead.current) {
+                return
+            }
+            if(!dropHead.current.contains(e.target)) {
+                setDropOn(false) 
+            }
+        }
+
+        document.addEventListener('click', handler, true)
+        
+        return () => {
+            document.removeEventListener('click')
+        }
+    },[])
 
     const handleClick = () => {
         // A functional update
@@ -18,7 +37,7 @@ const Dropdown = ({ options, onChange, value }) => {
     })
 
     return (
-        <div className='w-48 relative'>
+        <div ref={dropHead} className='w-48 relative'>
             <Panel classNames='flex justify-between items-center cursor-pointer' onClick={handleClick}>
                 {/* Existence check helper */}
                 {value?.label || 'Select...'}
