@@ -12,6 +12,23 @@ console.log(firstElement, secondElement);
 // Output: 1,2
 ```
 
+## Event capturing and bubbling method
+
+```js
+const drop =  document.querySelector('.w-48')
+
+const handleClick = (event) => {
+    if (drop.contains(event.target)) {
+        console.log('inside div')
+    } else {
+        console.log('outside div')
+    }
+}
+
+document.addEventListener('click', handleClick , true)
+
+```
+
 ## State Concepts
 
 <img src="./conceptsPNGS/stateUpdates.png" alt="State Updates">
