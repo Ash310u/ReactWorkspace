@@ -12,8 +12,8 @@ const Dropdown = ({ options, onChange, value }) => {
 
     const renderedOptions = options.map((option) => {
         return <div className='hover:bg-sky-100 cursor-pointer p-1 rounded' key={option.value} onClick={() => {
-            onChange(option)
             setDropOn(false)
+            onChange(option)
         }}>{option.label}</div>
     })
 
