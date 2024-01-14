@@ -20,7 +20,7 @@ const Dropdown = ({ options, onChange, value }) => {
         document.addEventListener('click', handler, true)
         
         return () => {
-            document.removeEventListener('click')
+            document.removeEventListener('click', handler)
         }
     },[])
 
