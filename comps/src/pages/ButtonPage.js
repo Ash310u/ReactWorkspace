@@ -2,18 +2,10 @@ import Button from "../components/Button";
 import { GoFlame, GoDatabase, GoHome, GoCpu, GoCloud } from "react-icons/go";
 
 const ButtonPage = () => {
-    const handleClick = () => {
-            console.log('clicked');
-    }
-    const handleMouseEnter = () => {
-            console.log('Mouse Entered');
-    }
-    const handleMouseLeave = () => {
-            console.log('Mouse Leaved');
-    }
-    const handleMouseOver = () => {
-            console.log('Mouse Overed');
-    }
+    const handleClick = () => {}
+    const handleMouseEnter = () => {}
+    const handleMouseLeave = () => {}
+    const handleMouseOver = () => {}
     return (
         <div>
             <div>
