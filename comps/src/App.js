@@ -6,9 +6,9 @@ import Sidebar from './components/Sidebar';
 
 const App = () => {
     return (
-        <div>
+        <div className='container mx-auto grid grid-cols-6 gap-4 mt-4'>
             <Sidebar/>
-            <div>
+            <div className='col-span-5'>
                 <Route path='/accordion'><AccordionPage/></Route>
                 <Route path='/dropdown'><DropdownPage/></Route>
                 <Route path='/buttons'><ButtonPage/></Route>
