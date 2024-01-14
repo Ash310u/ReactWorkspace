@@ -15,7 +15,6 @@ const DropdownPage = () => {
     return (
         <div className="flex">
              <Dropdown options={options} onChange={handleSelect} value={selectedItem} />
-             <Dropdown options={options} onChange={handleSelect} value={selectedItem} />
         </div>
     )
 };
