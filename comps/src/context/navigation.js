@@ -11,13 +11,18 @@ const NavigationProvider = ({ children }) => {
         }
         // Anytime you add a EventListener to the window object, you always make sure you add up a cleanup function.
         window.addEventListener('popstate', handler)
-        
+
         return () => {
             window.removeEventListener('popstate', handler)
         }
     },[])
 
-    return <NavigationContext.Provider value={{}}>
+    const navigate = (to) => {
+        window.history.pushState({}, '', to);
+        setCurrentPath(to)
+    }
+
+    return <NavigationContext.Provider value={{ currentPath, navigate }}>
         {currentPath}
         {children}
     </NavigationContext.Provider>
