@@ -9,6 +9,12 @@ const ModalPage = () => {
         setShowModal(false)
     }
 
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          handleClose();
+        }
+    })
+
     const actionBar = <div>
         <Button onClick={handleClose} primary rounded> I Accept</Button>
     </div>
