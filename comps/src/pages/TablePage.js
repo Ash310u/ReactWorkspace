@@ -7,10 +7,26 @@ const TablePage = () => {
         { name: 'Apple', color: 'bg-red-600', score: 4 },
         { name: 'Lime', color: 'bg-green-600', score: 2 },
     ]
+    
+    // Columns
+    const config = [
+        {
+            label: 'Name',
+            render: (fruit) => fruit.name
+        },
+        {
+            label: 'Color',
+            render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`}></div>
+        },
+        {
+            label: 'Score',
+            render: (fruit) => fruit.score
+        }
+    ]
 
     return (
         <div>
-            <Table data={data} />
+            <Table data={data} config={config} />
         </div>
     )
 }
