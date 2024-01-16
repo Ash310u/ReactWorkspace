@@ -24,9 +24,13 @@ const TablePage = () => {
         }
     ]
 
+    const keyFn = (x) => {
+        return x.name
+    }
+
     return (
         <div>
-            <Table data={data} config={config} />
+            <Table data={data} config={config} keyFn={keyFn} />
         </div>
     )
 }
