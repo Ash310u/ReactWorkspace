@@ -8,12 +8,13 @@ const TablePage = () => {
         { name: 'Apple', color: 'bg-red-600', score: 4 },
         { name: 'Lime', color: 'bg-green-600', score: 2 },
     ]
-    
+
     // Columns
     const config = [
         {
             label: 'Name',
-            render: (rowData) => rowData.name
+            render: (rowData) => rowData.name,
+            sortValue: (rowData) => rowData.name
         },
         {
             label: 'Color',
@@ -22,7 +23,7 @@ const TablePage = () => {
         {
             label: 'Score',
             render: (rowData) => rowData.score,
-            header:() => <th className='bg-red-500'>Score</th>
+            sortValue: (rowData) => rowData.score
         }
     ]
 
