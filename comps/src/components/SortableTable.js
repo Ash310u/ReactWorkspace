@@ -5,7 +5,7 @@ const SortableTable = (props) => {
     const [sortOrder, setSortOrder] = useState(null)
     const [sortBy, setSortBy] = useState(null)
 
-    const { config } = props
+    const { config, data } = props
 
     const handleClick = (label) => {
         sortOrder === null ? setSortOrder('asc') : sortOrder === 'asc' ? setSortOrder('desc') : setSortOrder(null);
@@ -22,9 +22,23 @@ const SortableTable = (props) => {
         };
     })
 
+    let sortedData = data;
+    if (sortOrder && sortBy) {
+        const { sortValue } = config.find(column =>  column.label === sortBy);
+        sortedData = [...data].sort((a,b) => {
+            const valueA = sortValue(a);
+            const valueB = sortValue(b);
+            
+            const reverseOrder = sortOrder === 'asc' ? 1 : -1
+
+            const order = typeof valueA === 'string' ?  valueA.localeCompare(valueB) * reverseOrder : (valueA - valueB) * reverseOrder
+            return order
+        })
+    }
+
     return <div>
         {sortOrder} - {sortBy}
-        <Table {...props} config={updatedConfig} />
+        <Table {...props} config={updatedConfig} data={sortedData}/>
     </div>
 }
 
