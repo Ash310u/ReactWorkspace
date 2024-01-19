@@ -25,7 +25,7 @@ const SortableTable = (props) => {
         return {
             ...column,
             header: () => (
-                <th className="cursor-pointer hover:bg-gray-50"  onClick={() => handleClick(column.label)}>
+                <th className="cursor-pointer hover:bg-gray-50" onClick={() => handleClick(column.label)}>
                     <div className="flex items-center gap-2 p-2">
                         {getIcons(column.label, sortBy, sortOrder)}
                         {column.label}
@@ -36,21 +36,21 @@ const SortableTable = (props) => {
     })
 
     let sortedData = data;
-    
+
     // Sorting system
     if (sortOrder && sortBy) {
-        const { sortValue } = config.find(column =>  column.label === sortBy);
-        sortedData = [...data].sort((a,b) => {
+        const { sortValue } = config.find(column => column.label === sortBy);
+        sortedData = [...data].sort((a, b) => {
             const valueA = sortValue(a);
             const valueB = sortValue(b);
-            
+
             const reverseOrder = sortOrder === 'asc' ? 1 : -1
 
-            return typeof valueA === 'string' ?  valueA.localeCompare(valueB) * reverseOrder : (valueA - valueB) * reverseOrder
+            return typeof valueA === 'string' ? valueA.localeCompare(valueB) * reverseOrder : (valueA - valueB) * reverseOrder
         })
     }
 
-    return <Table {...props} config={updatedConfig} data={sortedData}/>
+    return <Table {...props} config={updatedConfig} data={sortedData} />
 }
 
 const getIcons = (label, sortBy, sortOrder) => {
@@ -60,7 +60,7 @@ const getIcons = (label, sortBy, sortOrder) => {
             <BsCaretDownFill />
         </div>
     }
-    return sortOrder === null ? <div><BsCaretUpFill/><BsCaretDownFill/></div> : sortOrder === 'asc' ?  <div><BsCaretUpFill/></div> :  <div><BsCaretDownFill/></div> 
+    return sortOrder === null ? <div><BsCaretUpFill /><BsCaretDownFill /></div> : sortOrder === 'asc' ? <div><BsCaretUpFill /></div> : <div><BsCaretDownFill /></div>
 }
 
 export default SortableTable;
