@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BsCaretUpFill, BsCaretDownFill } from "react-icons/bs";
 import Table from "./Table";
 
 const SortableTable = (props) => {
@@ -18,7 +19,14 @@ const SortableTable = (props) => {
 
         return {
             ...column,
-            header: () => <th onClick={() => handleClick(column.label)}>{column.label} IS SORTABLE</th>
+            header: () => (
+                <th onClick={() => handleClick(column.label)}>
+                    <div className="flex items-center gap-2 p-4">
+                        {getIcons(column.label, sortBy, sortOrder)}
+                        {column.label}
+                    </div>
+                </th>
+            )
         };
     })
 
@@ -31,15 +39,23 @@ const SortableTable = (props) => {
             
             const reverseOrder = sortOrder === 'asc' ? 1 : -1
 
-            const order = typeof valueA === 'string' ?  valueA.localeCompare(valueB) * reverseOrder : (valueA - valueB) * reverseOrder
-            return order
+            return typeof valueA === 'string' ?  valueA.localeCompare(valueB) * reverseOrder : (valueA - valueB) * reverseOrder
         })
     }
 
     return <div>
-        {sortOrder} - {sortBy}
         <Table {...props} config={updatedConfig} data={sortedData}/>
     </div>
+}
+
+const getIcons = (label, sortBy, sortOrder) => {
+    if (label !== sortBy) {
+        return <div>
+            <BsCaretUpFill />
+            <BsCaretDownFill />
+        </div>
+    }
+    return sortOrder === null ? <div><BsCaretUpFill/><BsCaretDownFill/></div> : sortOrder === 'asc' ?  <div><BsCaretUpFill/></div> :  <div><BsCaretDownFill/></div> 
 }
 
 export default SortableTable;
