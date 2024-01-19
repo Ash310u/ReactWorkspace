@@ -36,6 +36,8 @@ const SortableTable = (props) => {
     })
 
     let sortedData = data;
+    
+    // Sorting system
     if (sortOrder && sortBy) {
         const { sortValue } = config.find(column =>  column.label === sortBy);
         sortedData = [...data].sort((a,b) => {
@@ -48,10 +50,7 @@ const SortableTable = (props) => {
         })
     }
 
-    return <div>
-        {sortOrder} - {sortBy}
-        <Table {...props} config={updatedConfig} data={sortedData}/>
-    </div>
+    return <Table {...props} config={updatedConfig} data={sortedData}/>
 }
 
 const getIcons = (label, sortBy, sortOrder) => {
