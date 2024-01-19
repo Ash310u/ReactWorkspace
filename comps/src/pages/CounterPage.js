@@ -20,7 +20,7 @@ const CounterPage = ({ intialCount }) => {
     return (
         <Panel classNames="m-3">
             <h1 className="text-xl">Count is {count}</h1>
-            <div className="flex flex-row pt-4">
+            <div className="flex flex-row pt-4 gap-2">
                 <Button success rounded onClick={() => setCount(count + 1)}>Increment</Button>
                 <Button secondary rounded onClick={() => setCount(count - 1)}>Decrement</Button>
             </div>
