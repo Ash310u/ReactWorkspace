@@ -1,5 +1,4 @@
 import ReactDOM from "react-dom"
-import Button from "./Button"
 import { useEffect } from "react"
 
 const Modal = ({ onClose, children, actionBar }) => {
