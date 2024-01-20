@@ -11,6 +11,8 @@ const CHANGE_VALUE = 'change_value';
 
 
 const reducer =  (state, action) => {
+    // HUH! Using a switch statement is a common pattern in Redux reducers and is generally considered more readable and conventional, making it a good choice in terms of code organization.
+
     // switch (action.type) {
     //     case INCREMENT_COUNT:
     //         state.count = state.count + 1
