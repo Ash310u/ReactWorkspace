@@ -25,7 +25,7 @@ const CounterPage = ({ intialCount }) => {
         count: intialCount,
         valueToAdd: 0
     });
-    console.log(state)
+
     const incrementCount = () => {
         dispatch({
             type: INCREMENT_COUNT
