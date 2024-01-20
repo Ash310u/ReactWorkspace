@@ -14,7 +14,7 @@ const reducer =  (state, action) => {
         action.type === INCREMENT_COUNT ? {...state, count: state.count + 1} :
         action.type === DECREMENT_COUNT ? {...state, count: state.count - 1} :
         action.type === ADD_VALUE ? {...state, valueToAdd: action.payload} :
-        action.type === CHANGE_VALUE ? {...state, count: state.count + action.payload} :
+        action.type === CHANGE_VALUE ? {...state, count: state.count + state.valueToAdd, valueToAdd: 0} :
         state
     )
 }
@@ -49,11 +49,6 @@ const CounterPage = ({ intialCount }) => {
         e.preventDefault()
         dispatch({
             type: CHANGE_VALUE,
-            payload:state.valueToAdd
-        })
-        dispatch({
-            type: ADD_VALUE,
-            payload:0
         })
     }
 
