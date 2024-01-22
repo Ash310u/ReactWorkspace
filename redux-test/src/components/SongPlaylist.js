@@ -7,7 +7,6 @@ function SongPlaylist() {
   // To Do:
   // Get list of songs
   const songPlaylist = useSelector((state) => {
-    console.log(state.songs)
     return state.songs;
   });
 
