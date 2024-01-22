@@ -37,7 +37,5 @@ const store = configureStore({
 
 
 export { store };
-export const { addMovie } = movieSlice.actions;
-export const { removeMovie } = movieSlice.actions;
-export const { addSong } = songSlice.actions;
-export const { removeSong } = songSlice.actions;
+export const { addMovie, removeMovie } = movieSlice.actions;
+export const { addSong, removeSong } = songSlice.actions;
