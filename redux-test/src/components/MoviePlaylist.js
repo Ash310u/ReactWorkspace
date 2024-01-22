@@ -7,12 +7,11 @@ function MoviePlaylist() {
   // To Do:
   // Get list of movies
   const moviePlaylist = useSelector((state) => {
-    return state.movie
+    return state.movies;
   });
 
   const handleMovieAdd = (movie) => {
-    const action = addMovie(movie);
-    dispatch(action);
+    dispatch(addMovie(movie));
   };
   const handleMovieRemove = (movie) => {
     // To Do:
