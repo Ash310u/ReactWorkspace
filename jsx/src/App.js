@@ -1,3 +1,4 @@
+
 // A component
 function App() {
     return (
