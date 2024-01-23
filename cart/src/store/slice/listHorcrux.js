@@ -1,6 +1,6 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit'
 
-const listHorcrux = createSlice({
+const listHorcruxSlice = createSlice({
     name: 'list',
     initialState: {
         searchTerm: '',
@@ -30,5 +30,5 @@ const listHorcrux = createSlice({
     }
 })
 
-export const { listReducer } = listHorcrux.reducer;
-export const { changeSearchTerm, addData, removeData } = listHorcrux.actions;
+export const listReducer = listHorcruxSlice.reducer;
+export const { changeSearchTerm, addData, removeData } = listHorcruxSlice.actions;

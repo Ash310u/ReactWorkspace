@@ -17,5 +17,5 @@ const formHorcrux = createSlice({
 })
 
 
-export const { formReducer } = formHorcrux.reducer;
+export const formReducer = formHorcrux.reducer;
 export const { changeName, changeCost } = formHorcrux.actions;
