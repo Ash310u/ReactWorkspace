@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { createRandomMovie } from "../data";
-import { addMovie, removeMovie } from "../store";
+import { addMovie, removeMovie } from "../store/slices/moviesSlice";
 
 function MoviePlaylist() {
   const dispatch = useDispatch();
