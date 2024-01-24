@@ -32,7 +32,7 @@ const Form = () => {
                         <input
                             className="input is-expanded"
                             type="number"
-                            value={cost === 0 ? '' : cost}
+                            value={cost || ''}
                             onChange={handleCostChange}
                         />
                         <button></button>
