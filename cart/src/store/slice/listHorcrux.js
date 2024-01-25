@@ -21,7 +21,7 @@ const listHorcruxSlice = createSlice({
         },
         removeData(state, action) {
             // Assumption:
-            // action.payload === the 'id' of the data  we want to remove
+            // action.payload === the 'id' of the data we want to remove
             const filteredData = state.data.filter((obj) => {
                 return obj.id !== action.payload
             })
