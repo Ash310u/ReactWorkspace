@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { addData } from './listHorcrux'
 
 const formHorcrux = createSlice({
     name: 'form',
@@ -13,6 +14,12 @@ const formHorcrux = createSlice({
         changeCost(state, action) {
             state.cost = action.payload
         }
+    },
+    extraReducers(builder) {
+    builder.addCase( addData, (state, action) => {
+            state.name = ''
+            state.cost = 0
+        })
     }
 })
 
