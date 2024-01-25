@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeCost, changeName } from '../store'
+import { addData, changeCost, changeName } from '../store'
 
 const Form = () => {
     const dispatch = useDispatch()
@@ -7,7 +7,7 @@ const Form = () => {
     const { name, cost } = useSelector((state) => {
         return state.form
     })
-    
+
     const handleNameChange = (e) => {
         dispatch(changeName(e.target.value))
     }
@@ -15,11 +15,15 @@ const Form = () => {
         const cost = parseInt(e.target.value) || 0
         dispatch(changeCost(cost))
     }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        dispatch(addData({ name, cost }))
+    }
 
     return (
         <div className="car-form panel">
             <h4 className="subtitle is-3"> Add Car</h4>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="field-group">
                     <div className="field">
                         <label className="label">Name</label>
@@ -35,11 +39,12 @@ const Form = () => {
                             value={cost || ''}
                             onChange={handleCostChange}
                         />
-                        <button></button>
                     </div>
                 </div>
+                <div className="field">
+                    <button className="button is-link">Add</button>
+                </div>
             </form>
-            <div>{name}, {cost}</div>
         </div>
     )
 }
