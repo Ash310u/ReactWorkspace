@@ -22,7 +22,7 @@ const Form = () => {
 
     return (
         <div className="car-form panel">
-            <h4 className="subtitle is-3"> Add Car</h4>
+            <h4 className="subtitle is-3">Add Car</h4>
             <form onSubmit={handleSubmit}>
                 <div className="field-group">
                     <div className="field">
@@ -33,6 +33,9 @@ const Form = () => {
                             value={name}
                             onChange={handleNameChange}
                         />
+                    </div>
+                    <div className="field">
+                        <label className="label">Cost</label>
                         <input
                             className="input is-expanded"
                             type="number"

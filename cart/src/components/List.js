@@ -22,7 +22,7 @@ const List = () => {
         )
     })
     return (
-        <div>
+        <div className="car-list">
             {renderedList}
             <hr />
         </div>

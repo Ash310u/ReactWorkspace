@@ -5,7 +5,7 @@ import Value from "./components/Value"
 
 const App = () => {
     return (
-        <div>
+        <div className="container is-fluid">
             <Form/>
             <Search/>
             <List/>
