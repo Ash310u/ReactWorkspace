@@ -6,3 +6,6 @@ export const store = configureStore({
         users: usersReducer
     }
 })
+
+// A shorthand to export everything from the specified module.
+export * from './thunks/fetchUsers'
