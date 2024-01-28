@@ -4,15 +4,15 @@ import { fetchUsers } from "../thunks/fetchUsers";
 const usersSlice = createSlice({
     name: 'users',
     initialState: {
-        isLoading: false,
         data: [],
+        isLoading: false,
         error: null
     },
     // The reducers property both creates an action creator function and responds to that action in the slice reducer.
     // The extraReducers allows you to respond to an action in your slice reducer but does not create an action creator function.
     extraReducers(builder) {
         builder.addCase(fetchUsers.pending, (state, action) => {
-            state.isLoading = false;
+            state.isLoading = true;
         });
         builder.addCase(fetchUsers.fulfilled, (state, action) => {
             state.isLoading = false;
