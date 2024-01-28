@@ -7,7 +7,7 @@ const UsersList = () => {
 
     useEffect(() => {
         dispatch(fetchUsers())
-    },[])
+    },[dispatch])
 
     return (
         <div>
