@@ -1,29 +1,37 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers, addUser } from '../store';
 import Skeleton from './Skeleton';
 import Button from './Button'
 
 const UsersList = () => {
-    const dispatch = useDispatch()
+    const [isLoadingUsers, setIsLoadingUsers] = useState(false)
+    const [loadingUsersError, setLoadingUsersError] = useState(null)
 
-    const { isLoading, data, error } = useSelector((state) => {
+    const dispatch = useDispatch()
+    const { data } = useSelector((state) => {
         return state.users
     })
 
     useEffect(() => {
+        setIsLoadingUsers(true)
+
         dispatch(fetchUsers())
+            .unwrap() // The "unwrap()" method is used to access the resolved or rejected value of a dispatched asynchronous action ( Basically unwrap() give a brand new promise back )
+            .catch((error) => setLoadingUsersError(error))
+            .finally(() => setIsLoadingUsers(false))
+
     }, [dispatch])
 
-    const handleUserAdd = ()  => {
+    const handleUserAdd = () => {
         dispatch(addUser());
     }
 
-    if(isLoading) {
-        return <Skeleton times={6} className="h-10 w-full"/>
+    if (isLoadingUsers) {
+        return <Skeleton times={6} className="h-10 w-full" />
     }
-    if(error) {
-        return <div> Error fetching data...</div>;
+    if (loadingUsersError) {
+        return <div>{loadingUsersError.message}</div>;
     }
     const renderedUsers = data.map((user) => {
         return (
