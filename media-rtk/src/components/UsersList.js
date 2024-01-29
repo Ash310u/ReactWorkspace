@@ -1,30 +1,24 @@
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from 'react'
+import { useSelector } from "react-redux";
 import { fetchUsers, addUser } from '../store';
 import Skeleton from './Skeleton';
 import Button from './Button'
+import useThunk from '../hooks/useThunk';
 
 const UsersList = () => {
-    const [isLoadingUsers, setIsLoadingUsers] = useState(false)
-    const [loadingUsersError, setLoadingUsersError] = useState(null)
+    const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers)
+    const [doCreateUsers, isCreatingUsers, creatingUserError] = useThunk(addUser)
 
-    const dispatch = useDispatch()
     const { data } = useSelector((state) => {
         return state.users
     })
 
     useEffect(() => {
-        setIsLoadingUsers(true)
-
-        dispatch(fetchUsers())
-            .unwrap() // The "unwrap()" method is used to access the resolved or rejected value of a dispatched asynchronous action ( Basically unwrap() give a brand new promise back )
-            .catch((error) => setLoadingUsersError(error))
-            .finally(() => setIsLoadingUsers(false))
-
-    }, [dispatch])
+        doFetchUsers()
+    }, [doFetchUsers])
 
     const handleUserAdd = () => {
-        dispatch(addUser());
+        doCreateUsers()
     }
 
     if (isLoadingUsers) {
@@ -47,9 +41,12 @@ const UsersList = () => {
         <div>
             <div className='flex flex-row justify-between m-3'>
                 <h1 className='m-2 text-xl'>Users</h1>
-                <Button success rounded onClick={handleUserAdd}>
-                    + Add User
-                </Button>
+                {
+                    isCreatingUsers
+                        ? 'Creating User...'
+                        : <Button success rounded onClick={handleUserAdd}>+ Add User</Button>
+                }
+                {creatingUserError && 'Error Create User...'}
             </div>
             {renderedUsers}
         </div>
