@@ -10,3 +10,4 @@ export const store = configureStore({
 // A shorthand to export everything from the specified module.
 export * from './thunks/fetchUsers'
 export * from './thunks/addUser'
+export * from './thunks/removeUser'
