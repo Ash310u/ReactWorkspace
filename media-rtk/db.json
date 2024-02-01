@@ -1,10 +1,16 @@
 {
   "users": [
     {
-      "id": "010e",
-      "name": "Mrs. Lorenzo Konopelski"
+      "id": "a783",
+      "name": "Erica Ankunding"
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": "12",
+      "title": "Album 1",
+      "userId":"a783"
+    }
+  ],
   "photos": []
 }
