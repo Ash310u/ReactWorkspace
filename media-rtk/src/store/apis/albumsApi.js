@@ -1,11 +1,24 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { faker } from '@faker-js/faker';
 
+// DEV ONLY
+const pause = (duration) => {
+    return new Promise(resolve => {
+        setTimeout(resolve, duration);
+    })
+}
+
 const albumsApi = createApi({
     reducerPath: 'albums',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://127.0.0.1:3005'
-    }),
+        baseUrl: 'http://127.0.0.1:3005',
+                                       // WHAT IS THIS 'fetchFn' FUNCTION ?
+        fetchFn: async(...args) => {  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // REMOVE FOR PRODUCTION // 'RTK Query' uses 'fetch' function that built directly into the browser to make request.                                                           //
+            await pause(1000);      //  In some cases we might want to 'override' that 'fetch' function(VERY RARE),                                                                      //
+            return fetch(...args); //   So to allow us to override that function and replace it with whatever kind of fetching machanism we want to put in we can define the 'fetchFn'. //
+        },                        //    ( right now I'm just using this as a way to introduce that 'little pause' arbitrarily.)                                                        //
+    }),                          ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     endpoints(builder) {
         return {
             addAlbum: builder.mutation({
