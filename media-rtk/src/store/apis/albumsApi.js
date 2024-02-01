@@ -9,6 +9,10 @@ const albumsApi = createApi({
     endpoints(builder) {
         return {
             addAlbum: builder.mutation({
+                // So the third argument right here is gonna be whatever you passed to your 'addAlbum()'[ // provided by the hook 'useAddAlbumMutation'// ].
+                invalidatesTags: (result, error, arg) => {
+                    return [{ type: 'Album', id: arg.id }]
+                },
                 query: (user) => {
                     return {
                         url:'/albums',
@@ -21,6 +25,11 @@ const albumsApi = createApi({
                 }
             }),
             fetchAlbums: builder.query({
+                           // Conceptually for me, Its a 'user record'.
+                           // So the third argument right here is gonna be whatever you passed to your hook[ // here the hook is 'useFetchAlbumsQuery'// ] when you called it back inside of your component.
+                providesTags: (result, error, arg) => {
+                    return [{ type: 'Album', id: arg.id }]
+                },
                 query: (user) => {
                     return {
                         url: '/albums',
