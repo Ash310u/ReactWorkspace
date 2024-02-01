@@ -21,6 +21,14 @@ const albumsApi = createApi({
     }),                          ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     endpoints(builder) {
         return {
+            removeAlbum: builder.mutation({
+                query: (album) => {
+                    return {
+                        url:`/albums/${album.id}`,
+                        method: 'DELETE',
+                    }
+                }
+            }),
             addAlbum: builder.mutation({
                 // So the third argument right here is gonna be whatever you passed to your 'addAlbum()'[ // provided by the hook 'useAddAlbumMutation'// ].
                 invalidatesTags: (result, error, arg) => {
@@ -57,5 +65,5 @@ const albumsApi = createApi({
     }
 })
 
-export const { useFetchAlbumsQuery, useAddAlbumMutation } = albumsApi;
+export const { useFetchAlbumsQuery, useAddAlbumMutation, useRemoveAlbumMutation } = albumsApi;
 export { albumsApi };
