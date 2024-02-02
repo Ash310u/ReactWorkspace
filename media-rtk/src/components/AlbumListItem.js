@@ -1,4 +1,4 @@
-import { GoTrashcan } from "react-icons/go";
+import { MdDelete } from "react-icons/md";
 import Button from './Button'
 import ExpandablePanel from './ExpandablePanel';
 import { useRemoveAlbumMutation } from "../store";
@@ -11,7 +11,7 @@ const AlbumListItem = ({ album }) => {
         removeAlbum(album)
     }
     const header = <>
-        <Button loading={results.isLoading} danger className='rounded-sm mr-2' onClick={handleDeleteAlbum}><GoTrashcan /></Button>
+        <Button loading={results.isLoading} danger className='rounded-sm mr-2' onClick={handleDeleteAlbum}><MdDelete /></Button>
         {album.title}
     </>
     return (

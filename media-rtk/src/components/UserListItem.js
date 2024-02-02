@@ -1,4 +1,4 @@
-import { GoTrashcan } from 'react-icons/go';
+import { MdDelete } from 'react-icons/md';
 import { removeUser } from '../store';
 import useThunk from '../hooks/useThunk';
 import Button from './Button'
@@ -10,7 +10,7 @@ const UserListItem = ({ user }) => {
     const [doDeleteUsers, isLoading, error] = useThunk(removeUser)
 
     const header = <>
-        <Button loading={isLoading} danger className='rounded-sm mr-2' onClick={() => doDeleteUsers(user)}><GoTrashcan /></Button>
+        <Button loading={isLoading} danger className='rounded-sm mr-2' onClick={() => doDeleteUsers(user)}><MdDelete /></Button>
         {error && 'Error Delete User...'}
         {user.name}
     </>
