@@ -22,6 +22,10 @@ const albumsApi = createApi({
     endpoints(builder) {
         return {
             removeAlbum: builder.mutation({
+                // So the third argument right here is gonna be whatever you passed to your 'removeAlbum()'[ // provided by the hook 'useRemoveAlbumMutation'// ].
+                invalidatesTags: (result, error, arg) => {
+                    return [{ type: 'Album', id: arg.id }]
+                },
                 query: (album) => {
                     return {
                         url:`/albums/${album.id}`,
@@ -31,8 +35,8 @@ const albumsApi = createApi({
             }),
             addAlbum: builder.mutation({
                 // So the third argument right here is gonna be whatever you passed to your 'addAlbum()'[ // provided by the hook 'useAddAlbumMutation'// ].
-                invalidatesTags: (result, error, arg) => {
-                    return [{ type: 'Album', id: arg.id }]
+                invalidatesTags: (result, error, user) => {
+                    return [{ type: 'UsersAlbums', id: user.id }]
                 },
                 query: (user) => {
                     return {
@@ -48,8 +52,12 @@ const albumsApi = createApi({
             fetchAlbums: builder.query({
                            // Conceptually for me, Its a 'user record'.
                            // So the third argument right here is gonna be whatever you passed to your hook[ // here the hook is 'useFetchAlbumsQuery'// ] when you called it back inside of your component.
-                providesTags: (result, error, arg) => {
-                    return [{ type: 'Album', id: arg.id }]
+                providesTags: (result, error, user) => {
+                    const tags = result.map(album => {
+                        return { type: 'Album', id: album.id };
+                    })
+                    tags.push({ type:'UsersAlbums', id:user.id})
+                    return tags
                 },
                 query: (user) => {
                     return {

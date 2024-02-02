@@ -6,7 +6,7 @@ import { useRemoveAlbumMutation } from "../store";
 
 const AlbumsListItem = ({ album }) => {
     const [ removeAlbum, results ]= useRemoveAlbumMutation();
-    console.log(results)
+
     const handleDeleteAlbum = ()  => {
         removeAlbum(album)
     }
