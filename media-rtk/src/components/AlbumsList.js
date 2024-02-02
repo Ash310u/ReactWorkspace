@@ -1,9 +1,9 @@
 import { useAddAlbumMutation, useFetchAlbumsQuery } from "../store";
 import Skeleton from "./Skeleton";
 import Button from "./Button";
-import AlbumsListItem from "./AlbumListItem";
+import AlbumListItem from "./AlbumListItem";
 
-const AlbumList = ({ user }) => {
+const AlbumsList = ({ user }) => {
     const { data, error, isFetching } = useFetchAlbumsQuery(user);
     const [ addAlbum, results ] = useAddAlbumMutation();
 
@@ -18,7 +18,7 @@ const AlbumList = ({ user }) => {
         content = <div>Error loading Albums...</div>
     } else {
         content = data.map(album => {
-            return <AlbumsListItem key={album.id} album={album}/>
+            return <AlbumListItem key={album.id} album={album}/>
         })
     }
 
@@ -35,4 +35,4 @@ const AlbumList = ({ user }) => {
     )
 }
 
-export default AlbumList;
+export default AlbumsList;

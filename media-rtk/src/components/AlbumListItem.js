@@ -4,7 +4,7 @@ import ExpandablePanel from './ExpandablePanel';
 import { useRemoveAlbumMutation } from "../store";
 
 
-const AlbumsListItem = ({ album }) => {
+const AlbumListItem = ({ album }) => {
     const [ removeAlbum, results ]= useRemoveAlbumMutation();
 
     const handleDeleteAlbum = ()  => {
@@ -21,4 +21,4 @@ const AlbumsListItem = ({ album }) => {
     )
 }
 
-export default AlbumsListItem;
+export default AlbumListItem;
