@@ -19,10 +19,10 @@ function Button({
     {
       'opacity-80': loading,
       'border-blue-500 bg-blue-500 text-white': primary,
-      'me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700': secondary,
+      'text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700': secondary,
       'border-green-500 bg-green-500 text-white': success,
       'border-yellow-400 bg-yellow-400 text-white': warning,
-      'border-red-500 bg-red-500 text-white': danger,
+      'border-red-500 bg-red-600 text-white': danger,
       'rounded-full': rounded,
       'bg-white': outline,
       'text-blue-500': outline && primary,

@@ -37,7 +37,7 @@ const UsersList = () => {
         <div>
             <div className='flex flex-row justify-between m-3 items-center'>
                 <h1 className='m-2 text-xl'>Users</h1>
-                <Button loading={isCreatingUsers} secondary className='rounded-sm' onClick={handleUserAdd}>+ Add User</Button>
+                <Button loading={isCreatingUsers} secondary onClick={handleUserAdd}>+ Add User</Button>
                 {creatingUserError && 'Error Create User...'}
             </div>
             {content}

@@ -26,7 +26,7 @@ const AlbumsList = ({ user }) => {
         <div>
             <div className="flex flex-row justify-between items-center m-2">
                 <h3 className="text-lg font-bold">Albums for {user.name}</h3>
-                <Button loading={results.isLoading } onClick={handleAddAlbum} primary>+ Add</Button>
+                <Button loading={results.isLoading } onClick={handleAddAlbum} secondary>+ Add</Button>
             </div>
             <div>
                 {content}
