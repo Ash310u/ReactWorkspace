@@ -1,16 +1,22 @@
 {
   "users": [
     {
-      "id": "a783",
-      "name": "Erica Ankunding"
+      "id": "c13d",
+      "name": "Kelvin Blanda"
     }
   ],
   "albums": [
     {
-      "id": "12",
-      "title": "Album 1",
-      "userId":"a783"
+      "id": "3ccb",
+      "userId": "c13d",
+      "title": "Fish"
     }
   ],
-  "photos": []
+  "photos": [
+    {
+      "id": "97a5",
+      "albumId": "3ccb",
+      "url": "https://loremflickr.com/150/150/abstract?lock=4209"
+    }
+  ]
 }
