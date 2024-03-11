@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { addDomainState, domainReducer } from "./slices/domainsSlice";
+import { stateAddAll, stateAddSingle, domainReducer } from "./slices/domainsSlice";
 import { domainsApi } from "./apis/domainsApi";
 import { setupListeners } from "@reduxjs/toolkit/query";
 
@@ -17,5 +17,5 @@ const store = configureStore({
 setupListeners(store.dispatch);
 
 export { store };
-export { addDomainState };
+export { stateAddAll, stateAddSingle };
 export { useAddDomainMutation, useFetchDomainQuery } from './apis/domainsApi'
