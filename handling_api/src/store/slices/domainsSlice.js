@@ -1,16 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const domainsSlice = createSlice({
-    name: 'domains(you can put any name)',
-    initialState: [],
+    name: 'domains',
+    initialState: {
+        domains: []
+    },
     reducers: {
-        addDomainState(state, action) {
-            action.payload.forEach((single) => {
-                state.push(single)
+        stateAddAll(state, action) {
+            action.payload.forEach(domain => {
+                return state.domains.push(domain)
             })
+        },
+        stateAddSingle(state, action) {
+            return state.domains.push(action.payload)
         },
     }
 })
 
-export const { addDomainState } =  domainsSlice.actions;
+export const { stateAddAll, stateAddSingle } =  domainsSlice.actions;
 export const domainReducer =  domainsSlice.reducer;
